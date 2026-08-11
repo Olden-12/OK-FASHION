@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> OK FASHION </title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1> OK FASHION </h1>
+        <div class="entete">
+            <input type="text" id="search" placeholder="rechercher un produit">
+            <select id="filter-category">
+                <option value="all">Toutes les categories</option>
+                <option value="Ceinture">Ceinture</option>
+                <option value="Chemise">Chemise</option>
+                <option value="Complet">Complet</option>
+                <option value="lunette">Lunette</option>
+                <option value="Montre">Montre</option>
+                <option value="Chaussure">Chaussure</option>
+            </select>
+
+            <select id="sort-price">
+                <option value="default">Trier par prix</option>
+                <option value="asc">Prix croissant</option>
+                <option value="desc">Prix décroissant</option>
+            </select>
+
+            <div class="cart-btn" onclick="toggleCart()">
+                🛒 <span class="badge" id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main id="products-container" class="products">
+        <div class="product" data-id="1" data-name="ceinture"data-price="3000" data-category="Ceinture" data-desc="La Ceinture qui impact votre entourage">
+            <img src="ceint1.jpeg" alt="Belle ceinture GUCCI de couleur gris">
+            <h3>ceinture gris</h3>
+            <p class="prix">3000 FCFA</p>
+            <p class="desc">Belle ceinture qui impact votre environment</p>
+            <button onclick="addToCart(this)">Ajouter au panier</button>
+        </div>
+        
+
+        <div class="product" data-id="3" data-name="ceinture blanche" data-price="3000" data-category="Ceinture" data-desc="Magifique ceinture blanche avec un design chic ">
+            <img src="ceint3.jpeg" alt="Ceinture GUCCI couleur d'origine">
+            <h3>Ceinture blanche</h3>
+            <p class="prix">3000 FCFA</p>
+            <p class="desc">Magifique ceinture blanche avec un design chic</p>
+            <button onclick="addToCart(this)">Ajouter au panier</button>
+        </div>
+        
+
+        <div class="product" data-id="4" data-name="Chemise blanche" data-price="4500" data-category="Chemise" data-desc="Chemise 100% coton et tres confortable pour les sorties en apres midi" >
+            <img src="chemi1.jpeg" alt="Chemise blanche">
+            <h3>Chemise blanche</h3>
+            <p class="prix">4500 FCFA</p>
+            <p class="desc">Chemise 100% coton et tres confortable pour les sorties en apres midi</p>
+            <button onclick="addToCart(this)">Ajouter au panier</button>
+        </div>
+        
+
+        <div class="product" data-id="5" data-name="Chemise bleunuit" data-price="4500" data-category="Chemise" data-desc="Chemise en lin de couleur bleunuit tres comfortable">
+            <img src="chemi3.jpeg" alt="Chemise bleunuit">
+            <h3>Chemise bleunuit</h3>
+            <p class="prix">4500 FCFA</p>
+            <p class="desc">Chemise en lin de couleur bleunuit tres comfortable</p>
+            <button onclick="addToCart(this)">Ajouter au panier</button>
+        </div>
+
+        <div class="product" data-id="6" data-name="Ensemble culotte" data-price="9000" data-category="Complet" data-desc="Magifique completpour les sorties en pleine air ">
+            <img src="complet2.jpeg" alt="ensemble jean">
+            <h3>Ensemble culotte</h3>
+            <p class="prix">9000 FCFA</p>
+            <p class="desc">Magifique completpour les sorties en pleine air</p>
+            <button onclick="addToCart(this)">Ajouter au panier</button>
+        </div>
+
+        <div class="product" data-id="7" data-name="Ensemble culotte a capuche de boston" data-price="10000" data-category="Complet" data-desc="Magifique complet confortablepour les rencontre avec des amis">
+            <img src="complet4.jpeg" alt="complet a capuche">
+            <h3>Ensemble culotte a capuche de boston</h3>
+            <p class="prix">10000 FCFA</p>
+            <p class="desc">Magifique complet confortablepour les rencontre avec des amis</p>
+            <button onclick="addToCart(this)">Ajouter au panier</button>
+        </div>
+
+        <div class="product" data-id="8" data-name=" paire de lunette " data-price="5500" data-category="lunette" data-desc="lunette qui fait resortir votre beauté">
+            <img src="lunette4.jpeg" alt="lunette burberry">
+            <h3> Belle paire de lunette Burberry</h3>
+            <p class="prix">5500 FCFA</p>
+            <p class="desc">lunette qui fait resortir votre beauté</p>
+            <button onclick="addToCart(this)">Ajouter au panier</button>
+        </div>
+
+        <div class="product" data-id="9" data-name="montre" data-price="18000" data-category="Montre" data-desc="Une belle montre bleu de chez Rolex incrusté de diamant">
+            <img src="montre1.jpeg" alt="montre cartier bleu">
+            <h3>Une belle montre bleu  </h3>
+            <p class="prix">18000 FCFA</p>
+            <p class="desc">Une belle montre bleu de chez Rolex incrusté de diamant</p>
+            <button onclick="addToCart(this)">Ajouter au panier</button>
+        </div>
+
+        <div class="product" data-id="10" data-name="montre" data-price="20000" data-category="Montre" data-desc="Une belle montre en argent incrusté de diamant de chez Rolex">
+            <img src="montre3.jpeg" alt="montre Rolex">
+            <h3>Une belle montre en argent</h3>
+            <p class="prix">20000 FCFA</p>
+            <p class="desc">Une belle montre en argent incrusté de diamant de chez Rolex</p>
+            <button onclick="addToCart(this)">Ajouter au panier</button>
+        </div>
+
+
+        <div class="product" data-id="12" data-name="Chaussure" data-price="22000" data-category="Chaussure" data-desc="Belle chaussure luminescent ideal pour sortir la nuit ">
+            <img src="shoes2.jpeg" alt="paire de chaussure NIKE">
+            <h3>Chaussure NIKE de couleur noir </h3>
+            <p class="prix">22000 FCFA</p>
+            <p class="desc">Belle chaussure luminescent ideal pour sortir la nuit</p>
+            <button onclick="addToCart(this)">Ajouter au panier</button>
+        </div>
+
+    </main>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <h2> votre panier</h2>
+        <div id="cart-items"></div>
+        <div class="cart-total">
+            <p>Total: <span id="cart-total">0</span> FCFA</p>
+            <button onclick="checkout()">Commander</button>
+        </div>
+        <button class="close-cart" onclick="toggleCart()">X</button>
+    </div>
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
