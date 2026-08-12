@@ -10,23 +10,6 @@
     <header>
         <h1>Golden FASHION</h1>
         <div class="entete">
-            <input type="text" id="search" placeholder="rechercher un produit">
-            <select id="filter-category">
-                <option value="all">Toutes les categories</option>
-                <option value="Ceinture">Ceinture</option>
-                <option value="Chemise">Chemise</option>
-                <option value="Complet">Complet</option>
-                <option value="lunette">Lunette</option>
-                <option value="Montre">Montre</option>
-                <option value="Chaussure">Chaussure</option>
-            </select>
-
-            <select id="sort-price">
-                <option value="default">Trier par prix</option>
-                <option value="asc">Prix croissant</option>
-                <option value="desc">Prix décroissant</option>
-            </select>
-
             <div class="cart-btn" onclick="toggleCart()">
                 🛒 <span class="badge" id="cart-count">0</span>
             </div>
@@ -130,6 +113,11 @@
         <button class="close-cart" onclick="toggleCart()">X</button>
     </div>
     <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <footer>
+        <p> © 2026 Golden FASHION . Tous droits réservés. By Olden NASSI</p>
+        <a href="https://x.com"><img src="twitter.png.webp" alt="Twitter"></a>
+        <a href="https://www.instagram.com"><img src="instagram.png.webp" alt="Instagram"></a>
+    </footer>
 
     <script src="script.js"></script>
 </body>
