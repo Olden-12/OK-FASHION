@@ -131,3 +131,14 @@ header h1 {
 @media(max-width: 768px) {
  .cart-sidebar { width: 100%; }
 }
+footer{
+    background-color: white;
+    color: #242424;
+    opacity: 0.5;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 50px;
+    flex: space-between;
+    display: flex;
+}
