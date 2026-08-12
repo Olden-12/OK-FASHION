@@ -43,6 +43,24 @@ function updateCart() {
   }
 }
 
+function updateCart() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  const totalArticles = cart.reduce((s, i) => s + i.qty, 0);
+  const badge = document.getElementById('cart-count');
+
+  if(totalArticles > 0) {
+    badge.innerText = totalArticles;
+    badge.style.display = 'block'; // montre le badge
+  } else {
+    badge.style.display = 'none'; // cache le badge
+  }
+
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  document.getElementById('cart-total').innerText = total.toLocaleString();
+
+}
+
 function changeQty(id, delta) {
   const item = cart.find(p => p.id === id);
   item.qty += delta;
