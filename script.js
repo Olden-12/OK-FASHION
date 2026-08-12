@@ -27,8 +27,8 @@ function updateCart() {
     container.innerHTML = "<p>Votre panier est vide</p>";
   } else {
     container.innerHTML = cart.map(item => `
-      <div class="cart-item" style="display:flex; gap:10px; margin-bottom:15px">
-        <img src="${item.img}" width="60">
+      <div class="cart-item" >
+        <img src="${item.img}">
         <div>
           <h4>${item.name}</h4>
           <p>${item.price.toLocaleString()} FCFA</p>
@@ -90,4 +90,4 @@ function filterProducts() {
   visibleProducts.forEach(p => container.appendChild(p));
 }
 
-updateCart(); // Charge le panier au démarrage
+updateCart(); 
