@@ -98,7 +98,7 @@ header h1 {
     right: 0; 
 }
 .cart-item { 
-    display: flex; 
+    display: none; 
     gap: 10px; 
     margin: 15px 0; 
     border-bottom: 1px solid #ddd; 
