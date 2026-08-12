@@ -137,4 +137,5 @@ footer{
     opacity: 0.5;
     flex: space-between;
     display: flex;
+    align-items: center;
 }
