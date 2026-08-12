@@ -63,35 +63,4 @@ function toggleCart() {
 function checkout() {
   alert('Total à payer: ' + document.getElementById('cart-total').innerText + ' FCFA');
 }
-
-function filterProducts() {
-  const search = document.getElementById('searchInput').value.toLowerCase();
-  const category = document.getElementById('categoryFilter').value;
-  const sort = document.getElementById('sortFilter').value;
-  
-  let products = Array.from(document.querySelectorAll('.product'));
-  const container = document.querySelector('.products-container');
-  
-  products.forEach(p => {
-    const name = p.dataset.name.toLowerCase();
-    const matchSearch = name.includes(search);
-    const matchCategory = category === 'all' || p.dataset.category === category;
-    if(matchSearch && matchCategory) {
-      p.style.display = 'block';
-    } else {
-      p.style.display = 'none';
-    }
-  });
-  
-  let visibleProducts = products.filter(p => p.style.display === 'block');
-  if(sort === 'price-asc') {
-    visibleProducts.sort((a,b) => parseInt(a.dataset.price) - parseInt(b.dataset.price));
-  }
-  if(sort === 'price-desc') {
-    visibleProducts.sort((a,b) => parseInt(b.dataset.price) - parseInt(a.dataset.price));
-  }
-  
-  visibleProducts.forEach(p => container.appendChild(p));
-}
-
 updateCart(); 
