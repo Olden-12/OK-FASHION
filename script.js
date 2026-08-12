@@ -76,7 +76,11 @@ function filterProducts() {
     const name = p.dataset.name.toLowerCase();
     const matchSearch = name.includes(search);
     const matchCategory = category === 'all' || p.dataset.category === category;
-    p.style.display = (matchSearch && matchCategory) ? 'block' : 'none';
+    if(matchSearch && matchCategory) {
+      p.style.display = 'block';
+    } else {
+      p.style.display = 'none';
+    }
   });
   
   let visibleProducts = products.filter(p => p.style.display === 'block');
