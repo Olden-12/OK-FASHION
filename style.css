@@ -1,7 +1,7 @@
-* { margin: 0; padding: 0; box-sizing: border-box; background-color:  rgb(red, green, blue); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
     font-family: Arial, sans-serif;
-    background-color:  rgb(red, green, blue);
+    background-color:  white;
 }
 
 header {
@@ -94,8 +94,9 @@ header h1 {
     z-index: 100; 
     overflow-y: auto;
     overflow-x: hidden;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.2); }
-.cart-sidebar.active { 
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2); 
+}
+/* .cart-sidebar.active {  */
     right: 0; 
 }
 .cart-item { 
