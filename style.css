@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background: #1a1a1a; 
+    background: orange; 
     color: white; 
     padding: 15px 20px;
     position: sticky;
@@ -87,7 +87,7 @@ header h1 {
     top: 0; 
     width: 380px; 
     height: 100%; 
-    background: white; 
+    background: orange; 
     padding: 20px; 
     transition: 0.3s; 
     z-index: 100; 
