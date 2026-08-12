@@ -14,41 +14,47 @@ function addToCart(btn) {
   updateCart();
 }
 
-function updateCart() {
-  localStorage.setItem('cart', JSON.stringify(cart));
-  
-  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
-  document.getElementById('cart-total').innerText = total.toLocaleString();
-  
-  const totalArticles = cart.reduce((s, i) => s + i.qty, 0);
-  document.getElementById('cart-count').innerText = totalArticles;
-  const container = document.getElementById('cart-items');
-  if(cart.length === 0) {
-    container.innerHTML = "<p>Votre panier est vide</p>";
-  } else {
-    container.innerHTML = cart.map(item => `
-      <div class="cart-item" >
-        <img src="${item.img}">
-        <div>
-          <h4>${item.name}</h4>
-          <p>${item.price.toLocaleString()} FCFA</p>
-          <button onclick="changeQty('${item.id}', -1)">-</button>
-          <span> ${item.qty} </span>
-          <button onclick="changeQty('${item.id}', 1)">+</button>
-          <p><b>Sous-total: ${(item.price * item.qty).toLocaleString()} FCFA</b></p>
-          <button onclick="removeItem('${item.id}')">Supprimer</button>
-        </div>
-      </div>
-    `).join('');
-  }
-}
 function changeQty(id, delta) {
   const item = cart.find(p => p.id === id);
   item.qty += delta;
   if(item.qty <= 0) removeItem(id);
   else updateCart();
 }
+function updateCart() {
+  localStorage.setItem('cart', JSON.stringify(cart));
 
+  const totalArticles = cart.reduce((s, i) => s + i.qty, 0);
+  const badge = document.getElementById('cart-count');
+
+  if(totalArticles > 0) {
+    badge.innerText = totalArticles;
+    badge.style.display = 'block'; 
+  } else {
+    badge.style.display = 'none'; 
+  }
+
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  document.getElementById('cart-total').innerText = total.toLocaleString();
+
+  const container = document.getElementById('cart-items');
+  if(cart.length === 0) {
+    container.innerHTML = "<p style='text-align:center'>Votre panier est vide</p>";
+  } else {
+    container.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <img src="${item.img}" width="60">
+        <div>
+          <h4>${item.name}</h4>
+          <p>${item.price.toLocaleString()} FCFA</p>
+          <button onclick="changeQty('${item.id}', -1)">-</button>
+          <span> ${item.qty} </span>
+          <button onclick="changeQty('${item.id}', 1)">+</button>
+          <button onclick="removeItem('${item.id}')">Supprimer</button>
+        </div>
+      </div>
+    `).join('');
+  }
+}
 function removeItem(id) {
   cart = cart.filter(p => p.id !== id);
   updateCart();
