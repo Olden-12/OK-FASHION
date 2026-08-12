@@ -17,8 +17,8 @@ function addToCart(btn) {
 function updateCart() {
   localStorage.setItem('cart', JSON.stringify(cart));
   
-  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
-  document.getElementById('cart-total').innerText = total.toLocaleString();
+  // const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  // document.getElementById('cart-total').innerText = total.toLocaleString();
   
   const totalArticles = cart.reduce((s, i) => s + i.qty, 0);
   document.getElementById('cart-count').innerText = totalArticles;
