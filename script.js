@@ -15,13 +15,6 @@ function addToCart(btn) {
 }
 
 function updateCart() {
-if(totalArticle > 0) {
-  badge.innerText = totalArticle;
-  badge.Style.display = 'block';
-} else {
-  badge.style.display = 'none';
-}
-  
   localStorage.setItem('cart', JSON.stringify(cart));
   
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
